@@ -1,0 +1,4054 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SamDatawarehouse_Source",
+        "connectionString": "Provider=SQLOLEDB;Data Source=.;Persist Security Info=true;User ID=ETL_SamDW;Initial Catalog=Sam_DW",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "V_DimUser",
+        "columns": [
+          {
+            "name": "UserKey",
+            "dataType": "int64",
+            "sourceColumn": "UserKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "BKUserId",
+            "dataType": "int64",
+            "sourceColumn": "BKUserId",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Mobile",
+            "dataType": "string",
+            "sourceColumn": "Mobile",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CodeEghtesadi",
+            "dataType": "string",
+            "sourceColumn": "CodeEghtesadi",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "UserTypeKey",
+            "dataType": "int64",
+            "sourceColumn": "UserTypeKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersonDocStatusKey",
+            "dataType": "int64",
+            "sourceColumn": "PersonDocStatusKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "CompanyDocStatusKey",
+            "dataType": "int64",
+            "sourceColumn": "CompanyDocStatusKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "BankDocStatusKey",
+            "dataType": "int64",
+            "sourceColumn": "BankDocStatusKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "ContractKey",
+            "dataType": "int64",
+            "sourceColumn": "ContractKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "Fiscal",
+            "dataType": "int64",
+            "sourceColumn": "Fiscal",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "UserStateKey",
+            "dataType": "int64",
+            "sourceColumn": "UserStateKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "InitialFiscal",
+            "dataType": "string",
+            "sourceColumn": "InitialFiscal",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "sourceColumn": "FirstName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "sourceColumn": "LastName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "TaminKonande",
+            "dataType": "string",
+            "sourceColumn": "TaminKonande",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Ssn",
+            "dataType": "string",
+            "sourceColumn": "Ssn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Address",
+            "dataType": "string",
+            "sourceColumn": "Address",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SaleAgentKey",
+            "dataType": "int64",
+            "sourceColumn": "SaleAgentKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "TafziliCode",
+            "dataType": "string",
+            "sourceColumn": "TafziliCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CreatedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreatedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CreateDateKey",
+            "dataType": "int64",
+            "sourceColumn": "CreateDateKey",
+            "sourceProviderType": "BigInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimUser",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimUser].*   FROM [pla].[V_DimUser] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimUser].*   FROM [pla].[V_DimUser] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimUser"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimContractDocument",
+        "columns": [
+          {
+            "name": "ContractDocumentKey",
+            "dataType": "int64",
+            "sourceColumn": "ContractDocumentKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ContractDocumentName",
+            "dataType": "string",
+            "sourceColumn": "ContractDocumentName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimContractDocument",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimContractDocument].*   FROM [pla].[V_DimContractDocument] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimContractDocument].*   FROM [pla].[V_DimContractDocument] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimContractDocument"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimContractGroup",
+        "columns": [
+          {
+            "name": "ContractGroupKey",
+            "dataType": "int64",
+            "sourceColumn": "ContractGroupKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ContractGroupName",
+            "dataType": "string",
+            "sourceColumn": "ContractGroupName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimContractGroup",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimContractGroup].*   FROM [pla].[V_DimContractGroup] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimContractGroup].*   FROM [pla].[V_DimContractGroup] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimContractGroup"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimContractGroupDescription",
+        "columns": [
+          {
+            "name": "ContractGroupDescriptionKey",
+            "dataType": "int64",
+            "sourceColumn": "ContractGroupDescriptionKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ContractGroupDescriptionName",
+            "dataType": "string",
+            "sourceColumn": "ContractGroupDescriptionName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimContractGroupDescription",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimContractGroupDescription].*   FROM [pla].[V_DimContractGroupDescription] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimContractGroupDescription].*   FROM [pla].[V_DimContractGroupDescription] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimContractGroupDescription"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimContractStatus",
+        "columns": [
+          {
+            "name": "ContractStatusKey",
+            "dataType": "int64",
+            "sourceColumn": "ContractStatusKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ContractStatusName",
+            "dataType": "string",
+            "sourceColumn": "ContractStatusName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "sourceColumn": "Description",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimContractStatus",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimContractStatus].*   FROM [pla].[V_DimContractStatus] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimContractStatus].*   FROM [pla].[V_DimContractStatus] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimContractStatus"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimContractType",
+        "columns": [
+          {
+            "name": "ContractTypeKey",
+            "dataType": "int64",
+            "sourceColumn": "ContractTypeKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ContractTypeName",
+            "dataType": "string",
+            "sourceColumn": "ContractTypeName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimContractType",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimContractType].*   FROM [pla].[V_DimContractType] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimContractType].*   FROM [pla].[V_DimContractType] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimContractType"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimDate",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "GregorianDate",
+            "dataType": "string",
+            "sourceColumn": "GregorianDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "GregorianMonthNo",
+            "dataType": "int64",
+            "sourceColumn": "GregorianMonthNo",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "GregorianDayOfWeekInt",
+            "dataType": "int64",
+            "sourceColumn": "GregorianDayOfWeekInt",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "GregorianMonthName",
+            "dataType": "string",
+            "sourceColumn": "GregorianMonthName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "GregorianSeasonCode",
+            "dataType": "int64",
+            "sourceColumn": "GregorianSeasonCode",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianInt",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PersianYearInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianYearInt",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianMonthNo",
+            "dataType": "int64",
+            "sourceColumn": "PersianMonthNo",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianDayInMonth",
+            "dataType": "int64",
+            "sourceColumn": "PersianDayInMonth",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianDayInMonthId",
+            "dataType": "int64",
+            "sourceColumn": "PersianDayInMonthId",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianMonthDayInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianMonthDayInt",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianDayOfWeekInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianDayOfWeekInt",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianMonthName",
+            "dataType": "string",
+            "sourceColumn": "PersianMonthName",
+            "sortByColumn": "PersianMonthNo",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianStr",
+            "dataType": "string",
+            "sourceColumn": "PersianStr",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PersianYearMonthInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianYearMonthInt",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PersianYearMonthStr",
+            "dataType": "string",
+            "sourceColumn": "PersianYearMonthStr",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PersianYearMonthName",
+            "dataType": "string",
+            "sourceColumn": "PersianYearMonthName",
+            "sortByColumn": "PersianYearMonthInt",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianDayOfWeekName",
+            "dataType": "string",
+            "sourceColumn": "PersianDayOfWeekName",
+            "sortByColumn": "PersianDayOfWeekInt",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearMonthRank",
+            "dataType": "int64",
+            "sourceColumn": "PersianYearMonthRank",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "PersianFullName",
+            "dataType": "string",
+            "sourceColumn": "PersianFullName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianSeasonCode",
+            "dataType": "int64",
+            "sourceColumn": "PersianSeasonCode",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianSeasonName",
+            "dataType": "string",
+            "sourceColumn": "PersianSeasonName",
+            "sortByColumn": "PersianSeasonCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearSeasonCode",
+            "dataType": "string",
+            "sourceColumn": "PersianYearSeasonCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearSeasonName",
+            "dataType": "string",
+            "sourceColumn": "PersianYearSeasonName",
+            "sortByColumn": "PersianYearSeasonCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearSemesterName",
+            "dataType": "string",
+            "sourceColumn": "PersianYearSemesterName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearSemesterCode",
+            "dataType": "int64",
+            "sourceColumn": "PersianYearSemesterCode",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PersianYearWeekName",
+            "dataType": "string",
+            "sourceColumn": "PersianYearWeekName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearWeekNumber",
+            "dataType": "string",
+            "sourceColumn": "PersianYearWeekNumber",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "IsHoliday",
+            "dataType": "boolean",
+            "sourceColumn": "IsHoliday",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean"
+          },
+          {
+            "name": "IsWeekend",
+            "dataType": "int64",
+            "sourceColumn": "IsWeekend",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimDate",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[V_DimDate].*   FROM [dbo].[V_DimDate] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[V_DimDate].*   FROM [dbo].[V_DimDate] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimDate"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "V_DimDateYearMonth",
+        "columns": [
+          {
+            "name": "YearMonthKey",
+            "dataType": "int64",
+            "sourceColumn": "YearMonthKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PersianYearInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianYearInt",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "YearMonthRank",
+            "dataType": "int64",
+            "sourceColumn": "YearMonthRank",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "PersianMonthNo",
+            "dataType": "int64",
+            "sourceColumn": "PersianMonthNo",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianMonthName",
+            "dataType": "string",
+            "sourceColumn": "PersianMonthName",
+            "sortByColumn": "PersianMonthNo",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearMonthInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianYearMonthInt",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PersianYearMonthStr",
+            "dataType": "string",
+            "sourceColumn": "PersianYearMonthStr",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PersianYearMonthName",
+            "dataType": "string",
+            "sourceColumn": "PersianYearMonthName",
+            "sortByColumn": "PersianYearMonthInt",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianSeasonCode",
+            "dataType": "int64",
+            "sourceColumn": "PersianSeasonCode",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianSeasonName",
+            "dataType": "string",
+            "sourceColumn": "PersianSeasonName",
+            "sortByColumn": "PersianSeasonCode",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimDateYearMonth",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[V_DimDateYearMonth].*   FROM [dbo].[V_DimDateYearMonth] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[V_DimDateYearMonth].*   FROM [dbo].[V_DimDateYearMonth] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimDateYearMonth"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "V_DimTime",
+        "columns": [
+          {
+            "name": "TimeKey",
+            "dataType": "int64",
+            "sourceColumn": "TimeKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ShortTime24",
+            "dataType": "string",
+            "sourceColumn": "ShortTime24",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Hour24",
+            "dataType": "int64",
+            "sourceColumn": "Hour24",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Hour24ShortString",
+            "dataType": "string",
+            "sourceColumn": "Hour24ShortString",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Hour24MinString",
+            "dataType": "string",
+            "sourceColumn": "Hour24MinString",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Minute",
+            "dataType": "int64",
+            "sourceColumn": "Minute",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MinuteFullString24",
+            "dataType": "string",
+            "sourceColumn": "MinuteFullString24",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimTime",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[V_DimTime].*   FROM [dbo].[V_DimTime] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[V_DimTime].*   FROM [dbo].[V_DimTime] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimTime"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "V_DimUserContract",
+        "columns": [
+          {
+            "name": "UserContractKey",
+            "dataType": "int64",
+            "sourceColumn": "UserContractKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "UserContractName",
+            "dataType": "string",
+            "sourceColumn": "UserContractName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "sourceColumn": "Description",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimUserContract",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimUserContract].*   FROM [pla].[V_DimUserContract] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimUserContract].*   FROM [pla].[V_DimUserContract] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimUserContract"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimUserFiscal",
+        "columns": [
+          {
+            "name": "UserFiscalKey",
+            "dataType": "int64",
+            "sourceColumn": "UserFiscalKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "UserFiscalName",
+            "dataType": "string",
+            "sourceColumn": "UserFiscalName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimUserFiscal",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimUserFiscal].*   FROM [pla].[V_DimUserFiscal] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimUserFiscal].*   FROM [pla].[V_DimUserFiscal] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimUserFiscal"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimUserRole",
+        "columns": [
+          {
+            "name": "UserRoleKey",
+            "dataType": "int64",
+            "sourceColumn": "UserRoleKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "UserRoleName",
+            "dataType": "string",
+            "sourceColumn": "UserRoleName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimUserRole",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimUserRole].*   FROM [pla].[V_DimUserRole] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimUserRole].*   FROM [pla].[V_DimUserRole] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimUserRole"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimUserState",
+        "columns": [
+          {
+            "name": "UserStateKey",
+            "dataType": "int64",
+            "sourceColumn": "UserStateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "UserStateName",
+            "dataType": "string",
+            "sourceColumn": "UserStateName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimUserState",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimUserState].*   FROM [pla].[V_DimUserState] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimUserState].*   FROM [pla].[V_DimUserState] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimUserState"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimUserStatus",
+        "columns": [
+          {
+            "name": "UserStatusKey",
+            "dataType": "int64",
+            "sourceColumn": "UserStatusKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "UserStatusName",
+            "dataType": "string",
+            "sourceColumn": "UserStatusName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimUserStatus",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimUserStatus].*   FROM [pla].[V_DimUserStatus] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimUserStatus].*   FROM [pla].[V_DimUserStatus] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimUserStatus"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimUserTaminKonandeHa",
+        "columns": [
+          {
+            "name": "UserTaminKonandeHaKey",
+            "dataType": "int64",
+            "sourceColumn": "UserTaminKonandeHaKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "UserTaminKonandeHaName",
+            "dataType": "string",
+            "sourceColumn": "UserTaminKonandeHaName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimUserTaminKonandeHa",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimUserTaminKonandeHa].*   FROM [pla].[V_DimUserTaminKonandeHa] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimUserTaminKonandeHa].*   FROM [pla].[V_DimUserTaminKonandeHa] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimUserTaminKonandeHa"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_DimUserType",
+        "columns": [
+          {
+            "name": "UserTypeKey",
+            "dataType": "int64",
+            "sourceColumn": "UserTypeKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "UserTypeName",
+            "dataType": "string",
+            "sourceColumn": "UserTypeName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "UserTypeEng",
+            "dataType": "string",
+            "sourceColumn": "UserTypeEng",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimUserType",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_DimUserType].*   FROM [pla].[V_DimUserType] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_DimUserType].*   FROM [pla].[V_DimUserType] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimUserType"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_FactContract",
+        "columns": [
+          {
+            "name": "ContractKey",
+            "dataType": "int64",
+            "sourceColumn": "ContractKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "UserKey",
+            "dataType": "int64",
+            "sourceColumn": "UserKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DepartmentKey",
+            "dataType": "int64",
+            "sourceColumn": "DepartmentKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "InChargeKey",
+            "dataType": "int64",
+            "sourceColumn": "InChargeKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ActiveKey",
+            "dataType": "int64",
+            "sourceColumn": "ActiveKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "TypeKey",
+            "dataType": "int64",
+            "sourceColumn": "TypeKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "StatusKey",
+            "dataType": "int64",
+            "sourceColumn": "StatusKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "GharardadConfirmKey",
+            "dataType": "int64",
+            "sourceColumn": "GharardadConfirmKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "BazarConfirmKey",
+            "dataType": "int64",
+            "sourceColumn": "BazarConfirmKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "MaliConfirmKey",
+            "dataType": "int64",
+            "sourceColumn": "MaliConfirmKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "CompanyKey",
+            "dataType": "int64",
+            "sourceColumn": "CompanyKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "BankKey",
+            "dataType": "int64",
+            "sourceColumn": "BankKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "GroupContractKey",
+            "dataType": "int64",
+            "sourceColumn": "GroupContractKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "StartDateKey",
+            "dataType": "int64",
+            "sourceColumn": "StartDateKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "EndDateKey",
+            "dataType": "int64",
+            "sourceColumn": "EndDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CreatedDateKey",
+            "dataType": "int64",
+            "sourceColumn": "CreatedDateKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "NumberOfTransaction",
+            "dataType": "int64",
+            "sourceColumn": "NumberOfTransaction",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TotalAmountOfTransaction",
+            "dataType": "string",
+            "sourceColumn": "TotalAmountOfTransaction",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CreatedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreatedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "UpdatedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "UpdatedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "BKPreviousContractId",
+            "dataType": "int64",
+            "sourceColumn": "BKPreviousContractId",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "AppendixNumber",
+            "dataType": "int64",
+            "sourceColumn": "AppendixNumber",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "AutoRenew",
+            "dataType": "int64",
+            "sourceColumn": "AutoRenew",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "CancelContract",
+            "dataType": "int64",
+            "sourceColumn": "CancelContract",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "CancelDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CancelDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CancelDateKey",
+            "dataType": "int64",
+            "sourceColumn": "CancelDateKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "string",
+            "sourceColumn": "StartDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "string",
+            "sourceColumn": "EndDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Cost",
+            "dataType": "double",
+            "sourceColumn": "Cost"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_FactContract",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_FactContract].*   FROM [pla].[V_FactContract] ",
+              "dataSource": "SamDatawarehouse_Source"
+            },
+            "annotations": [
+              {
+                "name": "TableWidgetSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+                  "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+                  "  <ColumnSuggestedType />",
+                  "  <ColumnFormat />",
+                  "  <ColumnAccuracy />",
+                  "  <ColumnCurrencySymbol />",
+                  "  <ColumnPositivePattern />",
+                  "  <ColumnNegativePattern />",
+                  "  <ColumnWidths>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ContractKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>90</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>UserKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>70</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>DepartmentKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>105</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>InChargeKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>93</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ActiveKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>78</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>TypeKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>72</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>StatusKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>79</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>GharardadConfirmKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>136</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>BazarConfirmKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>112</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>MaliConfirmKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>103</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CompanyKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>93</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>BankKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>71</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>GroupContractKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>119</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>StartDateKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>95</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>EndDateKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>89</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CreatedDateKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>110</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Cost</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>52</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>NumberOfTransaction</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>135</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>TotalAmountOfTransaction</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>159</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CreatedDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>92</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>UpdatedDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>94</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>BKPreviousContractId</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>135</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AppendixNumber</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>112</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AutoRenew</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>86</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CancelContract</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>104</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CancelDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>85</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CancelDateKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>103</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>StartDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>77</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>EndDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>71</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnWidths>",
+                  "  <ColumnDisplayIndex>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ContractKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>0</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>UserKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>1</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>DepartmentKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>2</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>InChargeKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>3</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>ActiveKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>4</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>TypeKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>5</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>StatusKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>6</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>GharardadConfirmKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>7</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>BazarConfirmKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>8</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>MaliConfirmKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>9</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CompanyKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>10</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>BankKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>11</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>GroupContractKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>12</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>StartDateKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>13</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>EndDateKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>14</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CreatedDateKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>15</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Cost</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>16</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>NumberOfTransaction</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>17</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>TotalAmountOfTransaction</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>18</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CreatedDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>19</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>UpdatedDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>20</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>BKPreviousContractId</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>21</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AppendixNumber</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>22</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>AutoRenew</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>23</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CancelContract</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>24</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CancelDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>25</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>CancelDateKey</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>26</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>StartDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>27</int>",
+                  "      </value>",
+                  "    </item>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>EndDate</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <int>28</int>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnDisplayIndex>",
+                  "  <ColumnFrozen />",
+                  "  <ColumnChecked>",
+                  "    <item>",
+                  "      <key>",
+                  "        <string>Cost</string>",
+                  "      </key>",
+                  "      <value>",
+                  "        <boolean>true</boolean>",
+                  "      </value>",
+                  "    </item>",
+                  "  </ColumnChecked>",
+                  "  <ColumnFilter />",
+                  "  <SelectionFilter />",
+                  "  <FilterParameters />",
+                  "  <IsSortDescending>false</IsSortDescending>",
+                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_FactContract].*   FROM [pla].[V_FactContract] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_FactContract"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          },
+          {
+            "name": "TableWidgetSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>",
+              "<TableWidgetGridSerialization xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">",
+              "  <ColumnSuggestedType />",
+              "  <ColumnFormat />",
+              "  <ColumnAccuracy />",
+              "  <ColumnCurrencySymbol />",
+              "  <ColumnPositivePattern />",
+              "  <ColumnNegativePattern />",
+              "  <ColumnWidths>",
+              "    <item>",
+              "      <key>",
+              "        <string>ContractKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>90</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>UserKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>70</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>DepartmentKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>105</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>InChargeKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>93</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ActiveKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>78</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>TypeKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>72</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>StatusKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>79</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>GharardadConfirmKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>136</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>BazarConfirmKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>112</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>MaliConfirmKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>103</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CompanyKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>93</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>BankKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>71</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>GroupContractKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>119</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>StartDateKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>95</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>EndDateKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>89</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CreatedDateKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>110</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Cost</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>52</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>NumberOfTransaction</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>135</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>TotalAmountOfTransaction</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>159</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CreatedDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>92</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>UpdatedDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>94</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>BKPreviousContractId</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>135</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AppendixNumber</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>112</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AutoRenew</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>86</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CancelContract</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>104</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CancelDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>85</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CancelDateKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>103</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>StartDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>77</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>EndDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>71</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnWidths>",
+              "  <ColumnDisplayIndex>",
+              "    <item>",
+              "      <key>",
+              "        <string>ContractKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>0</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>UserKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>1</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>DepartmentKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>2</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>InChargeKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>3</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>ActiveKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>4</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>TypeKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>5</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>StatusKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>6</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>GharardadConfirmKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>7</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>BazarConfirmKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>8</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>MaliConfirmKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>9</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CompanyKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>10</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>BankKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>11</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>GroupContractKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>12</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>StartDateKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>13</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>EndDateKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>14</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CreatedDateKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>15</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>Cost</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>16</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>NumberOfTransaction</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>17</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>TotalAmountOfTransaction</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>18</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CreatedDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>19</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>UpdatedDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>20</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>BKPreviousContractId</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>21</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AppendixNumber</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>22</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>AutoRenew</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>23</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CancelContract</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>24</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CancelDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>25</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>CancelDateKey</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>26</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>StartDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>27</int>",
+              "      </value>",
+              "    </item>",
+              "    <item>",
+              "      <key>",
+              "        <string>EndDate</string>",
+              "      </key>",
+              "      <value>",
+              "        <int>28</int>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnDisplayIndex>",
+              "  <ColumnFrozen />",
+              "  <ColumnChecked>",
+              "    <item>",
+              "      <key>",
+              "        <string>Cost</string>",
+              "      </key>",
+              "      <value>",
+              "        <boolean>true</boolean>",
+              "      </value>",
+              "    </item>",
+              "  </ColumnChecked>",
+              "  <ColumnFilter />",
+              "  <SelectionFilter />",
+              "  <FilterParameters />",
+              "  <IsSortDescending>false</IsSortDescending>",
+              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "V_FactInvoice",
+        "columns": [
+          {
+            "name": "InvoiceKey",
+            "dataType": "int64",
+            "sourceColumn": "InvoiceKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "BatchKey",
+            "dataType": "int64",
+            "sourceColumn": "BatchKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "FiscalKey",
+            "dataType": "string",
+            "sourceColumn": "FiscalKey",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "InvoiceNo",
+            "dataType": "string",
+            "sourceColumn": "InvoiceNo",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Uid",
+            "dataType": "string",
+            "sourceColumn": "Uid",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EnqRef",
+            "dataType": "string",
+            "sourceColumn": "EnqRef",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EnqUid",
+            "dataType": "string",
+            "sourceColumn": "EnqUid",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EnqResult",
+            "dataType": "string",
+            "sourceColumn": "EnqResult",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CnfRef",
+            "dataType": "string",
+            "sourceColumn": "CnfRef",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CnfResult",
+            "dataType": "string",
+            "sourceColumn": "CnfResult",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "StatusKey",
+            "dataType": "int64",
+            "sourceColumn": "StatusKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "InvoiceTypeKey",
+            "dataType": "int64",
+            "sourceColumn": "InvoiceTypeKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "InvoicePatternKey",
+            "dataType": "int64",
+            "sourceColumn": "InvoicePatternKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "InvoiceSubjectKey",
+            "dataType": "int64",
+            "sourceColumn": "InvoiceSubjectKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SettlementMethodKey",
+            "dataType": "int64",
+            "sourceColumn": "SettlementMethodKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "BuyerTypeKey",
+            "dataType": "int64",
+            "sourceColumn": "BuyerTypeKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CreateDateKey",
+            "dataType": "int64",
+            "sourceColumn": "CreateDateKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "CreateDate",
+            "dataType": "string",
+            "sourceColumn": "CreateDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "UpdateDate",
+            "dataType": "string",
+            "sourceColumn": "UpdateDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "InvoiceDateTime",
+            "dataType": "string",
+            "sourceColumn": "InvoiceDateTime",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "InvoiceCreateDateTime",
+            "dataType": "string",
+            "sourceColumn": "InvoiceCreateDateTime",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Bbc",
+            "dataType": "string",
+            "sourceColumn": "Bbc",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Bid",
+            "dataType": "string",
+            "sourceColumn": "Bid",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "BillId",
+            "dataType": "string",
+            "sourceColumn": "BillId",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Bpc",
+            "dataType": "string",
+            "sourceColumn": "Bpc",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Bpn",
+            "dataType": "string",
+            "sourceColumn": "Bpn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Tinb",
+            "dataType": "string",
+            "sourceColumn": "Tinb",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Sbc",
+            "dataType": "string",
+            "sourceColumn": "Sbc",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Scc",
+            "dataType": "string",
+            "sourceColumn": "Scc",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Scln",
+            "dataType": "string",
+            "sourceColumn": "Scln",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Tins",
+            "dataType": "string",
+            "sourceColumn": "Tins",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Cap",
+            "dataType": "double",
+            "sourceColumn": "Cap",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Insp",
+            "dataType": "double",
+            "sourceColumn": "Insp",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Tbill",
+            "dataType": "double",
+            "sourceColumn": "Tbill",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Tprdis",
+            "dataType": "double",
+            "sourceColumn": "Tprdis",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Tdis",
+            "dataType": "double",
+            "sourceColumn": "Tdis",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Tadis",
+            "dataType": "double",
+            "sourceColumn": "Tadis",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Tvam",
+            "dataType": "double",
+            "sourceColumn": "Tvam",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Tvop",
+            "dataType": "double",
+            "sourceColumn": "Tvop",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Tax17",
+            "dataType": "double",
+            "sourceColumn": "Tax17",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Todam",
+            "dataType": "double",
+            "sourceColumn": "Todam",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Tocv",
+            "dataType": "double",
+            "sourceColumn": "Tocv",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Tonw",
+            "dataType": "double",
+            "sourceColumn": "Tonw",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Torv",
+            "dataType": "double",
+            "sourceColumn": "Torv",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "TaxId",
+            "dataType": "string",
+            "sourceColumn": "TaxId",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Irtaxid",
+            "dataType": "string",
+            "sourceColumn": "Irtaxid",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Irinno",
+            "dataType": "string",
+            "sourceColumn": "Irinno",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Cdcd",
+            "dataType": "int64",
+            "sourceColumn": "Cdcd",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Cdcn",
+            "dataType": "string",
+            "sourceColumn": "Cdcn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Crn",
+            "dataType": "string",
+            "sourceColumn": "Crn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Tinc",
+            "dataType": "string",
+            "sourceColumn": "Tinc",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Lno",
+            "dataType": "string",
+            "sourceColumn": "Lno",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Lrno",
+            "dataType": "string",
+            "sourceColumn": "Lrno",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Ocu",
+            "dataType": "string",
+            "sourceColumn": "Ocu",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Oci",
+            "dataType": "int64",
+            "sourceColumn": "Oci",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Dco",
+            "dataType": "string",
+            "sourceColumn": "Dco",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Dci",
+            "dataType": "int64",
+            "sourceColumn": "Dci",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Tid",
+            "dataType": "string",
+            "sourceColumn": "Tid",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Rid",
+            "dataType": "string",
+            "sourceColumn": "Rid",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Lt",
+            "dataType": "int64",
+            "sourceColumn": "Lt",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "Cno",
+            "dataType": "string",
+            "sourceColumn": "Cno",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Did",
+            "dataType": "string",
+            "sourceColumn": "Did",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Asn",
+            "dataType": "string",
+            "sourceColumn": "Asn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Asd",
+            "dataType": "int64",
+            "sourceColumn": "Asd",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "In",
+            "dataType": "string",
+            "sourceColumn": "In",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "An",
+            "dataType": "string",
+            "sourceColumn": "An",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_FactInvoice",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [tax].[V_FactInvoice].*   FROM [tax].[V_FactInvoice] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [tax].[V_FactInvoice].*   FROM [tax].[V_FactInvoice] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_FactInvoice"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "tax"
+          }
+        ]
+      },
+      {
+        "name": "V_FactInvoiceDetail",
+        "columns": [
+          {
+            "name": "InvoiceDetailKey",
+            "dataType": "int64",
+            "sourceColumn": "InvoiceDetailKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "BKInvoiceId",
+            "dataType": "int64",
+            "sourceColumn": "BKInvoiceId",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "CreateDateKey",
+            "dataType": "int64",
+            "sourceColumn": "CreateDateKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "CreateDate",
+            "dataType": "string",
+            "sourceColumn": "CreateDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "UpdateDate",
+            "dataType": "string",
+            "sourceColumn": "UpdateDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Adis",
+            "dataType": "double",
+            "sourceColumn": "Adis",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Am",
+            "dataType": "double",
+            "sourceColumn": "Am",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Bros",
+            "dataType": "double",
+            "sourceColumn": "Bros",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Cfee",
+            "dataType": "double",
+            "sourceColumn": "Cfee",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Consfee",
+            "dataType": "double",
+            "sourceColumn": "Consfee",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Cop",
+            "dataType": "double",
+            "sourceColumn": "Cop",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Dis",
+            "dataType": "double",
+            "sourceColumn": "Dis",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Exr",
+            "dataType": "double",
+            "sourceColumn": "Exr",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Fee",
+            "dataType": "double",
+            "sourceColumn": "Fee",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Nw",
+            "dataType": "double",
+            "sourceColumn": "Nw",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Odam",
+            "dataType": "double",
+            "sourceColumn": "Odam",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Odr",
+            "dataType": "double",
+            "sourceColumn": "Odr",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Olam",
+            "dataType": "double",
+            "sourceColumn": "Olam",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Olr",
+            "dataType": "double",
+            "sourceColumn": "Olr",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Prdis",
+            "dataType": "double",
+            "sourceColumn": "Prdis",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Spro",
+            "dataType": "double",
+            "sourceColumn": "Spro",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Sscv",
+            "dataType": "double",
+            "sourceColumn": "Sscv",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Ssrv",
+            "dataType": "double",
+            "sourceColumn": "Ssrv",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Tcpbs",
+            "dataType": "double",
+            "sourceColumn": "Tcpbs",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Tsstam",
+            "dataType": "double",
+            "sourceColumn": "Tsstam",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Vam",
+            "dataType": "double",
+            "sourceColumn": "Vam",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Vop",
+            "dataType": "double",
+            "sourceColumn": "Vop",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Vra",
+            "dataType": "double",
+            "sourceColumn": "Vra",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Sstid",
+            "dataType": "string",
+            "sourceColumn": "Sstid",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Sstt",
+            "dataType": "string",
+            "sourceColumn": "Sstt",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Mu",
+            "dataType": "string",
+            "sourceColumn": "Mu",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Cut",
+            "dataType": "string",
+            "sourceColumn": "Cut",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Bsrn",
+            "dataType": "string",
+            "sourceColumn": "Bsrn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Tinc",
+            "dataType": "string",
+            "sourceColumn": "Tinc",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Pspd",
+            "dataType": "double",
+            "sourceColumn": "Pspd",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Cui",
+            "dataType": "double",
+            "sourceColumn": "Cui",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Cpr",
+            "dataType": "double",
+            "sourceColumn": "Cpr",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Sovat",
+            "dataType": "double",
+            "sourceColumn": "Sovat",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Vba",
+            "dataType": "double",
+            "sourceColumn": "Vba",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "Odt",
+            "dataType": "string",
+            "sourceColumn": "Odt",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Olt",
+            "dataType": "string",
+            "sourceColumn": "Olt",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_FactInvoiceDetail",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [tax].[V_FactInvoiceDetail].*   FROM [tax].[V_FactInvoiceDetail] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [tax].[V_FactInvoiceDetail].*   FROM [tax].[V_FactInvoiceDetail] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_FactInvoiceDetail"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "tax"
+          }
+        ]
+      },
+      {
+        "name": "V_FactInvoicePayment",
+        "columns": [
+          {
+            "name": "InvoicePaymentKey",
+            "dataType": "int64",
+            "sourceColumn": "InvoicePaymentKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "BKInvoiceId",
+            "dataType": "int64",
+            "sourceColumn": "BKInvoiceId",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "CreateDateKey",
+            "dataType": "int64",
+            "sourceColumn": "CreateDateKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "CreateDate",
+            "dataType": "string",
+            "sourceColumn": "CreateDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "UpdateDate",
+            "dataType": "string",
+            "sourceColumn": "UpdateDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PaymentDateTime",
+            "dataType": "string",
+            "sourceColumn": "PaymentDateTime",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PaymentDateKey",
+            "dataType": "int64",
+            "sourceColumn": "PaymentDateKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "Acn",
+            "dataType": "string",
+            "sourceColumn": "Acn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Iinn",
+            "dataType": "string",
+            "sourceColumn": "Iinn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Pcn",
+            "dataType": "string",
+            "sourceColumn": "Pcn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Pid",
+            "dataType": "string",
+            "sourceColumn": "Pid",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Trmn",
+            "dataType": "string",
+            "sourceColumn": "Trmn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Trn",
+            "dataType": "string",
+            "sourceColumn": "Trn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PaymentMethodKey",
+            "dataType": "int64",
+            "sourceColumn": "PaymentMethodKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PaymentValue",
+            "dataType": "double",
+            "sourceColumn": "PaymentValue",
+            "sourceProviderType": "Numeric"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_FactInvoicePayment",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [tax].[V_FactInvoicePayment].*   FROM [tax].[V_FactInvoicePayment] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [tax].[V_FactInvoicePayment].*   FROM [tax].[V_FactInvoicePayment] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_FactInvoicePayment"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "tax"
+          }
+        ]
+      },
+      {
+        "name": "V_FactUser",
+        "columns": [
+          {
+            "name": "UserKey",
+            "dataType": "int64",
+            "sourceColumn": "UserKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "BKUserId",
+            "dataType": "int64",
+            "sourceColumn": "BKUserId",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CodeEghtesadi",
+            "dataType": "string",
+            "sourceColumn": "CodeEghtesadi",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "UserTypeKey",
+            "dataType": "int64",
+            "sourceColumn": "UserTypeKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersonDocStatusKey",
+            "dataType": "int64",
+            "sourceColumn": "PersonDocStatusKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "CompanyDocStatusKey",
+            "dataType": "int64",
+            "sourceColumn": "CompanyDocStatusKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "BankDocStatusKey",
+            "dataType": "int64",
+            "sourceColumn": "BankDocStatusKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "ContractKey",
+            "dataType": "int64",
+            "sourceColumn": "ContractKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "Fiscal",
+            "dataType": "int64",
+            "sourceColumn": "Fiscal",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "UserStateKey",
+            "dataType": "int64",
+            "sourceColumn": "UserStateKey",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "InitialFiscal",
+            "dataType": "string",
+            "sourceColumn": "InitialFiscal",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Ssn",
+            "dataType": "string",
+            "sourceColumn": "Ssn",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SaleAgentKey",
+            "dataType": "int64",
+            "sourceColumn": "SaleAgentKey",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "CreatedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CreatedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CreateDateKey",
+            "dataType": "int64",
+            "sourceColumn": "CreateDateKey",
+            "sourceProviderType": "BigInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_FactUser",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [pla].[V_FactUser].*   FROM [pla].[V_FactUser] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [pla].[V_FactUser].*   FROM [pla].[V_FactUser] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_FactUser"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "pla"
+          }
+        ]
+      },
+      {
+        "name": "V_OLAPProcessLog",
+        "columns": [
+          {
+            "name": "ProcessKey",
+            "dataType": "int64",
+            "sourceColumn": "ProcessKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "OLAPDBName",
+            "dataType": "string",
+            "sourceColumn": "OLAPDBName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Process_StartTime",
+            "dataType": "dateTime",
+            "sourceColumn": "Process_StartTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "Process_EndTime",
+            "dataType": "dateTime",
+            "sourceColumn": "Process_EndTime",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ProcessDate",
+            "dataType": "string",
+            "sourceColumn": "ProcessDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ProcessTime",
+            "dataType": "string",
+            "sourceColumn": "ProcessTime",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_OLAPProcessLog",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [adm].[V_OLAPProcessLog].*   FROM [adm].[V_OLAPProcessLog] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [adm].[V_OLAPProcessLog].*   FROM [adm].[V_OLAPProcessLog] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_OLAPProcessLog"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "adm"
+          }
+        ]
+      },
+      {
+        "name": "V_DimCreateDate",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "GregorianDate",
+            "dataType": "string",
+            "sourceColumn": "GregorianDate",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "GregorianMonthNo",
+            "dataType": "int64",
+            "sourceColumn": "GregorianMonthNo",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "GregorianDayOfWeekInt",
+            "dataType": "int64",
+            "sourceColumn": "GregorianDayOfWeekInt",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "GregorianMonthName",
+            "dataType": "string",
+            "sourceColumn": "GregorianMonthName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "GregorianSeasonCode",
+            "dataType": "int64",
+            "sourceColumn": "GregorianSeasonCode",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianInt",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PersianYearInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianYearInt",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianMonthNo",
+            "dataType": "int64",
+            "sourceColumn": "PersianMonthNo",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianDayInMonth",
+            "dataType": "int64",
+            "sourceColumn": "PersianDayInMonth",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianDayInMonthId",
+            "dataType": "int64",
+            "sourceColumn": "PersianDayInMonthId",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianMonthDayInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianMonthDayInt",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianDayOfWeekInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianDayOfWeekInt",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianMonthName",
+            "dataType": "string",
+            "sourceColumn": "PersianMonthName",
+            "sortByColumn": "PersianMonthNo",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianStr",
+            "dataType": "string",
+            "sourceColumn": "PersianStr",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PersianYearMonthInt",
+            "dataType": "int64",
+            "sourceColumn": "PersianYearMonthInt",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PersianYearMonthStr",
+            "dataType": "string",
+            "sourceColumn": "PersianYearMonthStr",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PersianYearMonthName",
+            "dataType": "string",
+            "sourceColumn": "PersianYearMonthName",
+            "sortByColumn": "PersianYearMonthInt",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianDayOfWeekName",
+            "dataType": "string",
+            "sourceColumn": "PersianDayOfWeekName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearMonthRank",
+            "dataType": "int64",
+            "sourceColumn": "PersianYearMonthRank",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "PersianFullName",
+            "dataType": "string",
+            "sourceColumn": "PersianFullName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianSeasonCode",
+            "dataType": "int64",
+            "sourceColumn": "PersianSeasonCode",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianSeasonName",
+            "dataType": "string",
+            "sourceColumn": "PersianSeasonName",
+            "sortByColumn": "PersianSeasonCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearSeasonCode",
+            "dataType": "string",
+            "sourceColumn": "PersianYearSeasonCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearSeasonName",
+            "dataType": "string",
+            "sourceColumn": "PersianYearSeasonName",
+            "sortByColumn": "PersianYearSeasonCode",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearSemesterName",
+            "dataType": "string",
+            "sourceColumn": "PersianYearSemesterName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearSemesterCode",
+            "dataType": "int64",
+            "sourceColumn": "PersianYearSemesterCode",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PersianYearWeekName",
+            "dataType": "string",
+            "sourceColumn": "PersianYearWeekName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianYearWeekNumber",
+            "dataType": "string",
+            "sourceColumn": "PersianYearWeekNumber",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "IsHoliday",
+            "dataType": "boolean",
+            "sourceColumn": "IsHoliday",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean"
+          },
+          {
+            "name": "IsWeekend",
+            "dataType": "int64",
+            "sourceColumn": "IsWeekend",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "V_DimDate 1",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[V_DimDate].*   FROM [dbo].[V_DimDate] ",
+              "dataSource": "SamDatawarehouse_Source"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[V_DimDate].*   FROM [dbo].[V_DimDate] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "V_DimDate"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "AKPI",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value1",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value1]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value2",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value2]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value3",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value3]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value4",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value4]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": "{(1,2,3,4)}"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "CurrentYearMonthName",
+            "expression": [
+              "",
+              "var _currentDate=Value(Format(TODAY(),\"YYYYMMDD\"))",
+              "var _minDate = MAXX(",
+              "    TOPN(1,",
+              "   \t CALCULATETABLE (V_DimDate,V_DimDate[DateKey]= _currentDate),V_DimDate[DateKey], ASC),V_DimDate[PersianYearMonthName]",
+              ")",
+              "",
+              "return _minDate"
+            ]
+          },
+          {
+            "name": "LastDate_UpdateData",
+            "expression": [
+              " ",
+              "--CALCULATE(MAX(V_DimDate[PersianStr]),FILTER(V_OLAPProcessLog,V_OLAPProcessLog[OLAPDBName]==\"BenIce_SSAS\"))",
+              "",
+              "var maxPersianDate= CALCULATE(MAX(V_DimDate[PersianStr]),FILTER(V_OLAPProcessLog,V_OLAPProcessLog[OLAPDBName]==\"Sam_SSAS\"))",
+              "var maxProcessDate= CALCULATE(MAX(V_OLAPProcessLog[ProcessDate]),FILTER(V_OLAPProcessLog,V_OLAPProcessLog[OLAPDBName]==\"Sam_SSAS\"))",
+              "var maxTimDate = CALCULATE(MAX(V_OLAPProcessLog[ProcessTime]),FILTER(V_OLAPProcessLog,V_OLAPProcessLog[OLAPDBName]==\"Sam_SSAS\" && V_OLAPProcessLog[ProcessDate]==maxProcessDate))",
+              "",
+              "Return  CONCATENATE(CONCATENATE( maxPersianDate,\"-\")  , maxTimDate)"
+            ]
+          },
+          {
+            "name": "Contracts_Count_Total",
+            "expression": "COUNT(V_FactContract[ContractKey])"
+          }
+        ]
+      },
+      {
+        "name": "AKPI_Contract",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value1",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value1]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value2",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value2]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value3",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value3]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value4",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value4]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value5",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value5]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": "{(1,2,3,4,5)}"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Contract_Current_ContractCount",
+            "description": "تعداد قراردادهای جاری",
+            "expression": [
+              "",
+              "        CALCULATE(",
+              "           DistinctCOUNT(V_FactContract[ContractKey])",
+              "           , KEEPFILTERS(V_FactContract[ActiveKey]=1)",
+              "           ,KEEPFILTERS(ISBLANK( V_FactContract[CancelDate]))",
+              "",
+              "     )"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Contract_Current_ContractCount_VisualCard",
+            "description": "تعداد قراردادهای جاری",
+            "expression": [
+              " ",
+              "var _result= [Contract_Current_ContractCount]",
+              "return IF(ISBLANK(_result),0,_result)"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Contract_Current_ContractCost",
+            "description": "هزینه قراردادهای جاری",
+            "expression": [
+              "",
+              "        CALCULATE(",
+              "          SUM(V_FactContract[Cost])",
+              "           , KEEPFILTERS(V_FactContract[ActiveKey]=1)",
+              "           ,KEEPFILTERS(ISBLANK( V_FactContract[CancelDate]))",
+              "",
+              "     )"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Contract_Current_ContractCost_Unit",
+            "description": "هزینه قراردادهای جاری",
+            "expression": [
+              "",
+              "",
+              "var _value= [Contract_Current_ContractCost]",
+              "return SWITCH(SELECTEDVALUE( ListCurrencyUnit[Index],2),",
+              "1,_value, --ريال",
+              "2,ROUND(_value/10,0), --تومان",
+              "3,ROUND(_value/10000000,2),--میلیون تومان",
+              "4,ROUND(_value/10000000000,2 ),--میلیارد تومان",
+              "ROUND(_value/10,0) --تومان",
+              ") ",
+              ""
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Contract_Current_ContractCost_Unit_VisualCard",
+            "description": "هزینه قراردادهای جاری",
+            "expression": [
+              " ",
+              "var _result= [Contract_Current_ContractCost_Unit]",
+              "return IF(ISBLANK(_result),0,_result)"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Contract_Current_ContractCount_GrowthRate_PreviousMonth",
+            "expression": [
+              " ",
+              "var Denominator = if( ISBLANK( [Contract_Current_ContractCount_PreviousMonth]) || [Contract_Current_ContractCount_PreviousMonth]=0 ,0,[Contract_Current_ContractCount_PreviousMonth]) ",
+              "var Numerator= [Contract_Current_ContractCount]",
+              "return  if(Denominator=0 || Numerator=0,BLANK(),DIVIDE( Numerator-Denominator,Denominator))"
+            ],
+            "formatString": "#,0.00%;-#,0.00%;#,0.00%"
+          },
+          {
+            "name": "Contract_Current_ContractCount_PreviousYearMonth",
+            "description": "تعداد قراردادهای جاری سال/ماه گذشته",
+            "expression": [
+              "",
+              " CALCULATE([Contract_Current_ContractCount] , FILTER(All(V_DimDate) , V_DimDate[PersianYearMonthRank] = MAX(V_DimDate[PersianYearMonthRank]) -12))",
+              ""
+            ]
+          },
+          {
+            "name": "Contract_Current_ContractCount_PreviousMonth",
+            "description": "تعداد قراردادهای جاری ماه گذشته",
+            "expression": [
+              "",
+              " CALCULATE([Contract_Current_ContractCount] , FILTER(All(V_DimDate) , V_DimDate[PersianYearMonthRank] = MAX(V_DimDate[PersianYearMonthRank]) -1))",
+              ""
+            ]
+          },
+          {
+            "name": "DynamicMeasure_Contract",
+            "expression": [
+              "  ",
+              " \t \tSWITCH (            SELECTEDVALUE(DynamicMeasure_ContractList[Key],1),     ",
+              " \t \t       1, [Contract_Current_ContractCount],           ",
+              " \t \t       2, [Contract_Current_ContractCost]",
+              " \t \t       ",
+              " \t                      )"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Contract_Count_Total",
+            "description": "تعداد کل قراردادها",
+            "expression": "COUNT(V_FactContract[ContractKey])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Contract_Count_Total_VisualCard",
+            "description": "تعداد کل قراردادها",
+            "expression": [
+              " ",
+              "var _result= [Contract_Count_Total]",
+              "return IF(ISBLANK(_result),0,_result)"
+            ],
+            "formatString": "#,0"
+          }
+        ]
+      },
+      {
+        "name": "AKPI_User",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value1",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value1]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value2",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value2]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value3",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value3]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value4",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value4]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value5",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value5]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": "{(1,2,3,4,5)}"
+            }
+          }
+        ]
+      },
+      {
+        "name": "AKPI_Invoice",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value1",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value1]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value2",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value2]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value3",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value3]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value4",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value4]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Value5",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value5]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": "{(1,2,3,4,5)}"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ListCurrencyUnit",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Index",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value1]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "TitleUnitEn",
+            "dataType": "string",
+            "isNameInferred": false,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value2]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "TitleUnitFa",
+            "dataType": "string",
+            "isNameInferred": false,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value3]",
+            "sortByColumn": "Index"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                " {",
+                "(1,\"Rial\",\"ريال\"),",
+                "(2,\"Toman\",\"تومان\"),",
+                "(3,\"MToman\",\"میلیون تومان\"),",
+                "(4,\"BToman\",\"میلیارد تومان\")",
+                "--(5,\"Dollar\",\"دلار\"),",
+                "}"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DynamicMeasure_ContractList",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Key",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value1]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Title",
+            "dataType": "string",
+            "isNameInferred": false,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Value2]",
+            "sortByColumn": "Key"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "{(1,\"تعداد قرارداد\")",
+                ",(2,\"مبلغ قرارداد\")",
+                "",
+                "}"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "b8dc03f1-0795-4142-b5aa-7564afe0484e",
+        "fromTable": "V_FactContract",
+        "fromColumn": "UserKey",
+        "toTable": "V_DimUser",
+        "toColumn": "UserKey"
+      },
+      {
+        "name": "e1d6397b-4a65-47b0-b5d2-df5e258867b4",
+        "fromTable": "V_FactContract",
+        "fromColumn": "GroupContractKey",
+        "toTable": "V_DimContractGroup",
+        "toColumn": "ContractGroupKey"
+      },
+      {
+        "name": "f8caee5f-4e24-4dd8-8150-ff6d0f03fc8a",
+        "fromTable": "V_FactContract",
+        "fromColumn": "StatusKey",
+        "toTable": "V_DimContractStatus",
+        "toColumn": "ContractStatusKey"
+      },
+      {
+        "name": "a4d363a5-aaf9-49c1-bd24-ab2b45fae99a",
+        "fromTable": "V_FactContract",
+        "fromColumn": "TypeKey",
+        "toTable": "V_DimContractType",
+        "toColumn": "ContractTypeKey"
+      },
+      {
+        "name": "ab8c9d76-9891-45ca-b6d6-5d031db45fed",
+        "fromTable": "V_FactUser",
+        "fromColumn": "UserStateKey",
+        "toTable": "V_DimUserState",
+        "toColumn": "UserStateKey"
+      },
+      {
+        "name": "3b51a104-5da4-4cbf-a0a7-f14ee4028d58",
+        "fromTable": "V_FactUser",
+        "fromColumn": "UserTypeKey",
+        "toTable": "V_DimUserType",
+        "toColumn": "UserTypeKey"
+      },
+      {
+        "name": "7e81e1e9-d715-49f8-a114-35a3d186f795",
+        "fromTable": "V_FactUser",
+        "fromColumn": "CreateDateKey",
+        "toTable": "V_DimCreateDate",
+        "toColumn": "DateKey"
+      },
+      {
+        "name": "ac5da378-c114-4885-832b-16f90db0a097",
+        "fromTable": "V_FactContract",
+        "fromColumn": "CreatedDateKey",
+        "toTable": "V_DimCreateDate",
+        "toColumn": "DateKey"
+      },
+      {
+        "name": "74208fb9-80cc-4a07-831e-a35347120df0",
+        "fromTable": "V_FactContract",
+        "fromColumn": "StartDateKey",
+        "toTable": "V_DimDate",
+        "toColumn": "DateKey"
+      },
+      {
+        "name": "e80e9453-8ec1-48a8-a06f-1cfdcde3739a",
+        "fromTable": "V_FactInvoice",
+        "fromColumn": "CreateDateKey",
+        "toTable": "V_DimCreateDate",
+        "toColumn": "DateKey"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

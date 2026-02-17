@@ -6,7 +6,7 @@
     "dataSources": [
       {
         "name": "SamDatawarehouse_Source",
-        "connectionString": "Provider=SQLOLEDB;Data Source=.;Persist Security Info=true;User ID=ETL_SamDW;Initial Catalog=Sam_DW",
+        "connectionString": "Provider=SQLOLEDB;Data Source=192.168.1.10;Persist Security Info=true;User ID=ETL_SamDW;Initial Catalog=Sam_DW",
         "impersonationMode": "impersonateServiceAccount",
         "annotations": [
           {

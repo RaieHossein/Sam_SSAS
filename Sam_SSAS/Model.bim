@@ -5599,7 +5599,7 @@
             "formatString": "#,0"
           },
           {
-            "name": "Invoice_Tbill",
+            "name": "Invoice_Total_bill",
             "description": "مجموع صورتحساب‌های موفق(کد 80- فیلد 29)",
             "expression": [
               "        CALCULATE(",
@@ -5612,12 +5612,12 @@
             "formatString": "#,0"
           },
           {
-            "name": "Invoice_Tbill_Unit",
+            "name": "Invoice_Total_bill_Unit",
             "description": "مجموع صورتحساب‌های موفق(کد 80- فیلد 29)",
             "expression": [
               "",
               "",
-              "var _value= [Invoice_Tbill]",
+              "var _value= [Invoice_Total_bill]",
               "return SWITCH(SELECTEDVALUE( ListCurrencyUnit[Index],2),",
               "1,_value, --ريال",
               "2,ROUND(_value/10,0), --تومان",
@@ -5629,11 +5629,11 @@
             "formatString": "#,0"
           },
           {
-            "name": "Invoice_Tbill_Unit_VisualCard",
+            "name": "Invoice_Total_bill_Unit_VisualCard",
             "description": "مجموع صورتحساب‌های موفق(کد 80- فیلد 29)",
             "expression": [
               " ",
-              "var _result= [Invoice_Tbill_Unit]",
+              "var _result= [Invoice_Total_bill_Unit]",
               "return IF(ISBLANK(_result),0,_result)"
             ],
             "formatString": "#,0"
@@ -5647,6 +5647,119 @@
               "return IF(ISBLANK(_result),0,_result)"
             ],
             "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Total_Tvam",
+            "description": "مجموع مالیات بر ارزش افزوده",
+            "expression": [
+              "CALCULATE(SUM(V_FactInvoice[Tvam])",
+              "           , KEEPFILTERS(V_FactContract[StatusKey]=80)",
+              "     )"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Total_Tvam_Unit_VisualCard",
+            "description": "مجموع مالیات بر ارزش افزوده",
+            "expression": [
+              " ",
+              "var _result= [Invoice_Total_Tvam_Unit]",
+              "return IF(ISBLANK(_result),0,_result)"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Total_Tvam_Unit",
+            "description": "مجموع مالیات بر ارزش افزوده",
+            "expression": [
+              "",
+              "",
+              "var _value= [Invoice_Total_Tvam]",
+              "return SWITCH(SELECTEDVALUE( ListCurrencyUnit[Index],2),",
+              "1,_value, --ريال",
+              "2,ROUND(_value/10,0), --تومان",
+              "3,ROUND(_value/10000000,2),--میلیون تومان",
+              "4,ROUND(_value/10000000000,2 ),--میلیارد تومان",
+              "5,ROUND(_value/10000000000000,2 ),--همت",
+              "ROUND(_value/10,0) --تومان",
+              ") "
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Count_Tvam",
+            "description": "تعداد فاکتورهای دارای ارزش افزوده",
+            "expression": [
+              " CALCULATE(",
+              "        [Invoice_Count] ,KEEPFILTERS(V_FactInvoice[Tvam] > 0)",
+              "",
+              "     )",
+              "     ",
+              ""
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Avg_Tvam",
+            "description": "میانگین ارزش افزوده هر فاکتور",
+            "expression": [
+              " DIVIDE([Invoice_Total_Tvam]",
+              "       ,[Invoice_Count])",
+              "",
+              "     ",
+              "     ",
+              "",
+              "",
+              ""
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Total_Tdis",
+            "description": "مجموع کل تخفیفات",
+            "expression": [
+              "CALCULATE(SUM(V_FactInvoice[Tdis])",
+              "           , KEEPFILTERS(V_FactContract[StatusKey]=80)",
+              "     )"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Total_Tdis_VisualCard",
+            "description": "مجموع کل تخفیفات",
+            "expression": [
+              " ",
+              "var _result= [Invoice_Total_Tdis]",
+              "return IF(ISBLANK(_result),0,_result)"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Count_Tdis",
+            "description": "تعداد فاکتورهای دارای تخفیف",
+            "expression": [
+              " CALCULATE(",
+              "        [Invoice_Count] ,KEEPFILTERS(V_FactInvoice[Tdis] > 0)",
+              "",
+              "     )",
+              "     ",
+              ""
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Avg_Tdis",
+            "description": "میانگین تخفیف هر فاکتور",
+            "expression": [
+              " DIVIDE([Invoice_Total_Tdis]",
+              "       ,[Invoice_Count])",
+              "",
+              "     ",
+              "     ",
+              "",
+              "",
+              ""
+            ]
           }
         ]
       },

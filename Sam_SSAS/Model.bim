@@ -5725,11 +5725,11 @@
             "formatString": "#,0"
           },
           {
-            "name": "Invoice_Total_Tdis_VisualCard",
+            "name": "Invoice_Total_Tdis_Unit_VisualCard",
             "description": "مجموع کل تخفیفات(ردیف 25)",
             "expression": [
               " ",
-              "var _result= [Invoice_Total_Tdis]",
+              "var _result= [Invoice_Total_Tdis_Unit]",
               "return IF(ISBLANK(_result),0,_result)"
             ],
             "formatString": "#,0"
@@ -5760,6 +5760,24 @@
               "",
               ""
             ]
+          },
+          {
+            "name": "Invoice_Total_Tdis_Unit",
+            "description": "مجموع کل تخفیفات(ردیف 25)",
+            "expression": [
+              "",
+              "",
+              "var _value= [Invoice_Total_Tdis]",
+              "return SWITCH(SELECTEDVALUE( ListCurrencyUnit[Index],2),",
+              "1,_value, --ريال",
+              "2,ROUND(_value/10,0), --تومان",
+              "3,ROUND(_value/10000000,2),--میلیون تومان",
+              "4,ROUND(_value/10000000000,2 ),--میلیارد تومان",
+              "5,ROUND(_value/10000000000000,2 ),--همت",
+              "ROUND(_value/10,0) --تومان",
+              ") "
+            ],
+            "formatString": "#,0"
           }
         ]
       },

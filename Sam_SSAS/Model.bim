@@ -5650,7 +5650,7 @@
           },
           {
             "name": "Invoice_Total_Tvam",
-            "description": "مجموع مالیات بر ارزش افزوده",
+            "description": "مجموع مالیات بر ارزش افزوده (ردیف 27) ",
             "expression": [
               "CALCULATE(SUM(V_FactInvoice[Tvam])",
               "           , KEEPFILTERS(V_FactContract[StatusKey]=80)",
@@ -5660,7 +5660,7 @@
           },
           {
             "name": "Invoice_Total_Tvam_Unit_VisualCard",
-            "description": "مجموع مالیات بر ارزش افزوده",
+            "description": "مجموع مالیات بر ارزش افزوده (ردیف 27)",
             "expression": [
               " ",
               "var _result= [Invoice_Total_Tvam_Unit]",
@@ -5670,7 +5670,7 @@
           },
           {
             "name": "Invoice_Total_Tvam_Unit",
-            "description": "مجموع مالیات بر ارزش افزوده",
+            "description": "مجموع مالیات بر ارزش افزوده (ردیف 27)",
             "expression": [
               "",
               "",
@@ -5688,7 +5688,7 @@
           },
           {
             "name": "Invoice_Count_Tvam",
-            "description": "تعداد فاکتورهای دارای ارزش افزوده",
+            "description": "تعداد فاکتورهای دارای ارزش افزوده (ردیف 27)",
             "expression": [
               " CALCULATE(",
               "        [Invoice_Count] ,KEEPFILTERS(V_FactInvoice[Tvam] > 0)",
@@ -5701,7 +5701,7 @@
           },
           {
             "name": "Invoice_Avg_Tvam",
-            "description": "میانگین ارزش افزوده هر فاکتور",
+            "description": "میانگین ارزش افزوده هر فاکتور(ردیف 27)",
             "expression": [
               " DIVIDE([Invoice_Total_Tvam]",
               "       ,[Invoice_Count])",
@@ -5716,7 +5716,7 @@
           },
           {
             "name": "Invoice_Total_Tdis",
-            "description": "مجموع کل تخفیفات",
+            "description": "مجموع کل تخفیفات(ردیف 25)",
             "expression": [
               "CALCULATE(SUM(V_FactInvoice[Tdis])",
               "           , KEEPFILTERS(V_FactContract[StatusKey]=80)",
@@ -5726,7 +5726,7 @@
           },
           {
             "name": "Invoice_Total_Tdis_VisualCard",
-            "description": "مجموع کل تخفیفات",
+            "description": "مجموع کل تخفیفات(ردیف 25)",
             "expression": [
               " ",
               "var _result= [Invoice_Total_Tdis]",
@@ -5736,7 +5736,7 @@
           },
           {
             "name": "Invoice_Count_Tdis",
-            "description": "تعداد فاکتورهای دارای تخفیف",
+            "description": "تعداد فاکتورهای دارای تخفیف(ردیف 25)",
             "expression": [
               " CALCULATE(",
               "        [Invoice_Count] ,KEEPFILTERS(V_FactInvoice[Tdis] > 0)",
@@ -5749,7 +5749,7 @@
           },
           {
             "name": "Invoice_Avg_Tdis",
-            "description": "میانگین تخفیف هر فاکتور",
+            "description": "میانگین تخفیف هر فاکتور(ردیف25)",
             "expression": [
               " DIVIDE([Invoice_Total_Tdis]",
               "       ,[Invoice_Count])",

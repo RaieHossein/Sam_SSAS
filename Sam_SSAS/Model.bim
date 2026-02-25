@@ -5328,7 +5328,7 @@
             "formatString": "#,0"
           },
           {
-            "name": "OrderWorkshop_TotalPeyment_GrowthRate_PreviousYearMonth",
+            "name": "Invoice_Total_Tvam_GrowthRate_PreviousYearMonth",
             "description": "رشد مالیات بر ارزش افزوده سال/ماه گذشته",
             "expression": [
               " ",

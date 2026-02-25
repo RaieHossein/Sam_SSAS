@@ -5301,6 +5301,42 @@
               "return IF(ISBLANK(_result),0,_result)"
             ],
             "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Total_Tvam_PreviousYear",
+            "description": "مالیات بر ارزش افزوده سال قبل (ردیف 27- Tvam)",
+            "expression": [
+              " ",
+              " CALCULATE([Invoice_Total_Tvam] , FILTER(All(V_DimDate) , V_DimDate[PersianYearInt] = MAX(V_DimDate[PersianYearInt]) -1))"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_TotalTvam_GrowthRate_PreviousYear",
+            "description": "رشد مالیات نسبت به سال قبل",
+            "expression": " DIVIDE( [Invoice_Total_Tvam] -[Invoice_Total_Tvam_PreviousYear],[Invoice_Total_Tvam_PreviousYear])",
+            "formatString": "#,0.00%;-#,0.00%;#,0.00%"
+          },
+          {
+            "name": "Invoice_Total_Tvam_PreviousYearMonth",
+            "description": "مالیات بر ارزش افزوده سال/ماه گذشته",
+            "expression": [
+              "",
+              " CALCULATE([Invoice_Total_Tvam] , FILTER(All(V_DimDate) , V_DimDate[PersianYearMonthRank] = MAX(V_DimDate[PersianYearMonthRank]) -12))",
+              ""
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "OrderWorkshop_TotalPeyment_GrowthRate_PreviousYearMonth",
+            "description": "رشد مالیات بر ارزش افزوده سال/ماه گذشته",
+            "expression": [
+              " ",
+              "var _Denominator = if( ISBLANK( [Invoice_Total_Tvam_PreviousYearMonth]) || [Invoice_Total_Tvam_PreviousYearMonth]=0 ,0,[Invoice_Total_Tvam_PreviousYearMonth]) ",
+              "var _numerator= [Invoice_Total_Tvam]",
+              "return  if(_Denominator=0 || _numerator=0,BLANK(),DIVIDE( _numerator-_Denominator,_Denominator))"
+            ],
+            "formatString": "#,0.00%;-#,0.00%;#,0.00%"
           }
         ]
       },

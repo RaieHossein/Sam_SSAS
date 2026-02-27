@@ -4977,7 +4977,7 @@
             "expression": [
               "        CALCULATE(",
               "           DistinctCOUNT(V_FactInvoice[InvoiceKey])",
-              "           , KEEPFILTERS(V_FactContract[StatusKey]=80)",
+              "        --,KEEPFILTERS(V_FactContract[StatusKey]=80)",
               "         --,KEEPFILTERS(V_FactContract[EndDate] >=TODAY())",
               "",
               "     )"
@@ -5026,7 +5026,7 @@
           },
           {
             "name": "Invoice_Count_VisualCard",
-            "description": "تعداد صورتحساب های موفق",
+            "description": "تعداد صورتحساب ها",
             "expression": [
               " ",
               "var _result= [Invoice_Count]",
@@ -5337,6 +5337,28 @@
               "return  if(_Denominator=0 || _numerator=0,BLANK(),DIVIDE( _numerator-_Denominator,_Denominator))"
             ],
             "formatString": "#,0.00%;-#,0.00%;#,0.00%"
+          },
+          {
+            "name": "Invoice_Count_Moafagh",
+            "description": "تعداد صورتحساب های موفق(کد 80)",
+            "expression": [
+              "  CALCULATE(",
+              "           AKPI_Invoice[Invoice_Count]   ",
+              "           ,KEEPFILTERS(V_FactInvoice[StatusKey]=80)",
+              "         --,KEEPFILTERS(V_FactContract[EndDate] >=TODAY())",
+              "",
+              "     )"
+            ]
+          },
+          {
+            "name": "Invoice_Count_Moafagh_VisualCard",
+            "description": "تعداد صورتحساب های موفق",
+            "expression": [
+              " ",
+              "var _result= [Invoice_Count_Moafagh]",
+              "return IF(ISBLANK(_result),0,_result)"
+            ],
+            "formatString": "#,0"
           }
         ]
       },

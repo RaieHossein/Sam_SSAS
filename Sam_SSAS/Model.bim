@@ -4973,7 +4973,7 @@
         "measures": [
           {
             "name": "Invoice_Count",
-            "description": "تعداد صورتحساب های موفق",
+            "description": "تعداد صورتحساب ها ",
             "expression": [
               "        CALCULATE(",
               "           DistinctCOUNT(V_FactInvoice[InvoiceKey])",

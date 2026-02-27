@@ -4986,11 +4986,11 @@
           },
           {
             "name": "Invoice_Total_bill",
-            "description": "مجموع صورتحساب‌های موفق(کد 80- فیلد 29)",
+            "description": "مجموع صورتحساب‌ها",
             "expression": [
-              "        CALCULATE(",
+              " CALCULATE(",
               "           SUM(V_FactInvoice[Tbill])",
-              "           , KEEPFILTERS(V_FactContract[StatusKey]=80)",
+              "           --,KEEPFILTERS(V_FactInvoice[StatusKey]=80)",
               "         --,KEEPFILTERS(V_FactContract[EndDate] >=TODAY())",
               "",
               "     )"
@@ -5009,6 +5009,8 @@
               "2,ROUND(_value/10,0), --تومان",
               "3,ROUND(_value/10000000,2),--میلیون تومان",
               "4,ROUND(_value/10000000000,2 ),--میلیارد تومان",
+              "5,ROUND(_value/10000000000000,2 ),--همت",
+              "",
               "ROUND(_value/10,0) --تومان",
               ") "
             ],
@@ -5356,6 +5358,48 @@
             "expression": [
               " ",
               "var _result= [Invoice_Count_Moafagh]",
+              "return IF(ISBLANK(_result),0,_result)"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Total_bill_Moafagh",
+            "description": "مجموع صورتحساب های موفق (کد80/فیلد29)",
+            "expression": [
+              " CALCULATE(",
+              "           AKPI_Invoice[Invoice_Total_bill]",
+              "           ,KEEPFILTERS(V_FactInvoice[StatusKey]=80)",
+              "         --,KEEPFILTERS(V_FactContract[EndDate] >=TODAY())",
+              "",
+              "     )"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Total_bill_Moafagh_Unit",
+            "description": "مجموع صورتحساب های موفق(کد80/فیلد29)",
+            "expression": [
+              "",
+              "",
+              "var _value= [Invoice_Total_bill_Moafagh]",
+              "return SWITCH(SELECTEDVALUE( ListCurrencyUnit[Index],2),",
+              "1,_value, --ريال",
+              "2,ROUND(_value/10,0), --تومان",
+              "3,ROUND(_value/10000000,2),--میلیون تومان",
+              "4,ROUND(_value/10000000000,2 ),--میلیارد تومان",
+              "5,ROUND(_value/10000000000000,2 ),--همت",
+              "",
+              "ROUND(_value/10,0) --تومان",
+              ") "
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "Invoice_Total_bill_Moafagh_Unit_VisualCard",
+            "description": "مجموع صورتحساب های موفق(کد80/فیلد29)",
+            "expression": [
+              " ",
+              "var _result= [Invoice_Total_bill_Moafagh_Unit]",
               "return IF(ISBLANK(_result),0,_result)"
             ],
             "formatString": "#,0"
